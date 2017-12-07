@@ -1,0 +1,17 @@
+
+
+Starvation happens in priority queues (minHeap or maxHeap) because lowest (minHeap) or highest(maxHeap) priority can keep coming and higher priority(minHeap)/lower priority(maxHeap) respectively will starve.
+
+In order to avoid starvation, I followed the following simple rules to avoid starvation:
+
+minHeap Rule: If a patient is waiting for more than 7 rounds (each round there are maximum 4 patients are called from minHeap) i.e. approximately, the difference between current time and patient's arrival time divided by 4, then decrease patient's priority by 3.
+ 
+ Note: Value 7 (number of rounds) and 3 (priority decrease) below can be changed to adjust the tolerance of waiting.
+ 
+ 
+ 
+maxHeap Rule: If a patient is waiting for more than 7 rounds (each round there are maximum 2 patients are called from maxHeap) i.e. approximately, the difference between current time and patient's arrival time divided by 2, then increase patient's priority by 10.
+ * Note: Value 7 (number of rounds) and 10 (priority increase) below can be changed to adjust the tolerance of waiting.
+ 
+ 
+ Q does not have any starvation, becasuse first come first service, FIFO.
